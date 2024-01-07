@@ -8,7 +8,7 @@ import Register from './src/pages/register';
 import Display from './src/pages/display';
 import Login from './src/pages/login';
 import ProductList from './src/productPages/productList';
-import CreateProduct from './src/productPages/create';
+import CreateProduct from './src/productPages/Create';
 
 
 function App() {
