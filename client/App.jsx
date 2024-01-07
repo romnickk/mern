@@ -2,13 +2,13 @@ import { useState } from 'react'
 import './App.css'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './pages/home';
-import About from './pages/about';
-import Register from './pages/register';
-import Display from './pages/display';
-import Login from './pages/login';
-import ProductList from './productPages/productList';
-import CreateProduct from './productPages/create';
+import Home from './src/pages/home';
+import About from './src/pages/about';
+import Register from './src/pages/register';
+import Display from './src/pages/display';
+import Login from './src/pages/login';
+import ProductList from './src/productPages/productList';
+import CreateProduct from './src/productPages/create';
 
 
 function App() {
