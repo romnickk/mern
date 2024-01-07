@@ -11,7 +11,13 @@ const Product = require('./model/product')
 
 const app = express();
 
-app.use(cors())
+app.use(cors(
+        {
+                origin:["https://deploy-mern-1whq.vercel.app"],
+                methods:["POST","GET"],
+                credentials:true
+         }
+))
 app.use(express.json())
 app.use('/', router)
 app.use(express.static(path.join(__dirname, 'uploads')))
