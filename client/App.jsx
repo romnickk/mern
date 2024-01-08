@@ -9,7 +9,8 @@ import Display from './src/pages/display';
 import Login from './src/pages/login';
 import ProductList from './src/productPages/productList';
 import CreateProduct from './src/productPages/Create';
-import style from './src/css/register.module.css'
+import style from './src/css/register.module.css';
+import { Link } from 'react-router-dom';
 
 function App() {
 
