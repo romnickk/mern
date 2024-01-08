@@ -91,8 +91,8 @@ function App() {
   </div>
 
   <button type='submit' className={style.register}>Register</button>
-  <p>Already have an account? <Link to="/login">Login</Link></p>
-
+  <p>Already have an account? </p>
+  {/* <Link to="/login">Login</Link> */}
   </form>
   </div>
      <h2>Hello World</h2>
