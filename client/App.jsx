@@ -13,7 +13,7 @@ import CreateProduct from './src/productPages/Create';
 
 function App() {
 
-    axios.post('https://mern-server-khaki.vercel.app/product-list')
+    axios.get('https://mern-server-khaki.vercel.app/')
     .then(result => console.log(result))
     .catch(err => console.log(err))
 
