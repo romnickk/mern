@@ -12,7 +12,7 @@
 
 //   const checkUser = async () =>{
 //     try {
-//       const response = await axios.post('http://localhost:3000/register', {name,username,password})
+//       const response = await axios.post('http://localhost:3000/', {name,username,password})
 
 //       if(response.data.userExists){
 //        setMessage('username already exist')
