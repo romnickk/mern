@@ -26,12 +26,12 @@ function App() {
       <Routes>
         <Route path='/home' element={<Home/>}></Route>
         <Route path='/about' element={<About/>}></Route>
-        <Route path='/register' element={<Register/>}></Route>
+        <Route path='/' element={<Register/>}></Route>
         <Route path='/display' element={<Display/>}></Route>
         <Route path='/login' element={<Login/>}></Route>
 
 
-        <Route path='/' element={<ProductList/>}></Route>
+        <Route path='/product-list' element={<ProductList/>}></Route>
         <Route path='/create' element={<CreateProduct/>}></Route>
 
         
