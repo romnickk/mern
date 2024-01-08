@@ -50,14 +50,14 @@ app.post('/login', async(req,res) =>{
 
     try {
         const checkUsername = await User.findOne({username})
-    if(checkUsername){
-        // const compare = await bcrypt(password, checkUsername.password)
-        // if(compare){
-        //     res.json({message:"success"})
-        // }else{
-        //     res.json({message:true})
-        // }
-    }
+    // if(checkUsername){
+    //     // const compare = await bcrypt(password, checkUsername.password)
+    //     // if(compare){
+    //     //     res.json({message:"success"})
+    //     // }else{
+    //     //     res.json({message:true})
+    //     // }
+    // }
     }catch(error){
     console.log(error)
     }
