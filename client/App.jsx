@@ -24,7 +24,7 @@ function App() {
         <Route path='/api/home' element={<Home/>}></Route>
         <Route path='/api/about' element={<About/>}></Route>
         <Route path='/' element={<Register/>}></Route>
-        <Route path='/display' element={<Display/>}></Route>
+        <Route path='/api/display' element={<Display/>}></Route>
         <Route path='/api/login' element={<Login/>}></Route>
 
 
@@ -35,7 +35,6 @@ function App() {
       </Routes>
       </BrowserRouter>
      </div>
-     <h2>Hello World</h2>
 </>   
   )
 }
