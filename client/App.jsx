@@ -4,43 +4,16 @@ import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './src/pages/home';
 import About from './src/pages/about';
-// import Register from './src/pages/register';
+import Register from './src/pages/register';
 import Display from './src/pages/display';
 import Login from './src/pages/login';
 import ProductList from './src/productPages/productList';
 import CreateProduct from './src/productPages/Create';
-import style from './src/css/register.module.css';
-import { Link } from 'react-router-dom';
+// import style from './src/css/register.module.css';
+// import { Link } from 'react-router-dom';
 
 function App() {
 
-  const [name , setName] = useState();
-  const [username , serUsername] = useState();
-  const [password , setPassword] = useState();
-
-  const [message, setMessage] = useState('');
-
-  const checkUser = async () =>{
-    try {
-      const response = await axios.post('https://mern-server-khaki.vercel.app/', {name,username,password})
-
-      if(response.data.userExists){
-       setMessage('username already exist')
-      }else{
-       setMessage('register successfully')
-      }
-     } catch (error) {
-       console.log(error)
-     }
-  }
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    checkUser();
-    
-
-    
-  }
   return (
     
     <>
