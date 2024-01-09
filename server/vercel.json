@@ -20,6 +20,11 @@
       {
         "src": "/api/.*",
         "dest": "/api/productRoutes.js"
-      }
+      },
+      {
+        "src":"/[^.]+",
+        "dest":"/",
+        "status": 200
+    }
     ]
   }
