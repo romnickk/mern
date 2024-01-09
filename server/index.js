@@ -2,7 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose');
 const cors = require('cors')
 const User = require('./model/user')
-// const bcrypt = require('bcrypt')
+const bcrypt = require('bcrypt')
 const router = require('./api/productRoutes')
 const fs = require('fs')
 const path = require('path')
@@ -35,7 +35,7 @@ app.post('/', async(req,res) => {
         if(check){
          res.json({userExists:true})
         }else{
-        // const hashPassword = await bcrypt.hash(password,10)
+        const hashPassword = await bcrypt.hash(password,10)
         const saveUser = new User({name,username,password})
         await saveUser.save();
         res.json({userExists:false})
@@ -50,14 +50,14 @@ app.post('/login', async(req,res) =>{
 
     try {
         const checkUsername = await User.findOne({username})
-    // if(checkUsername){
-    //     // const compare = await bcrypt(password, checkUsername.password)
-    //     // if(compare){
-    //     //     res.json({message:"success"})
-    //     // }else{
-    //     //     res.json({message:true})
-    //     // }
-    // }
+    if(checkUsername){
+        const compare = await bcrypt(password, checkUsername.password)
+        if(compare){
+            res.json({message:"success"})
+        }else{
+            res.json({message:true})
+        }
+    }
     }catch(error){
     console.log(error)
     }

@@ -15,10 +15,7 @@ function Register() {
     try {
       
       const response = await axios.post('/api/login', {username,password})
-       
       setMessage(response.data.message)
-      
-      
 
      } catch (error) {
        console.log(error)
