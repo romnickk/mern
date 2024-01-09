@@ -21,14 +21,11 @@ app.use(cors(
 app.use(express.json())
 app.use('/api', router)
 app.use(express.static(path.join(__dirname, 'uploads')))
-app.use(express.static(path.join(__dirname, 'client/build')));
+
 mongoose.connect('mongodb+srv://romnick:1234@romnickdb.e14diyv.mongodb.net/myreg')
 .then(() => console.log('connected success'))
 .catch((error) => console.log(error))
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-  });
 
 app.post('/', async(req,res) => {
     const {name, username, password} = req.body;
