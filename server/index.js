@@ -64,14 +64,7 @@ app.post('/login', async(req,res) =>{
 
 })
 
-app.get('/display', async(req,res) =>{
-    try {
-        const users = await User.find()
-        res.json(users)
-    } catch (error) {
-        console.log(error)
-    }
-})
+
 
 
 const storage = multer.diskStorage({

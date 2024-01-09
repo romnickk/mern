@@ -4,6 +4,7 @@ const Product = require('../model/product')
 const multer = require('multer')
 const path = require('path')
 const fs = require('fs')
+const User = require('../model/user')
 
 
 router.get('/product-list', async(req,res) =>{
@@ -22,5 +23,14 @@ router.get('/product-list', async(req,res) =>{
       }
 })
 
+
+router.get('/display', async(req,res) =>{
+  try {
+      const users = await User.find()
+      res.json(users)
+  } catch (error) {
+      console.log(error)
+  }
+})
 
 module.exports = router
