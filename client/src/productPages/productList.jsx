@@ -12,7 +12,7 @@ function ProductList() {
     useEffect(() => {
       const fetchAllImages = async () => {
         try {
-          const response = await axios.get('http://localhost:3000/product-list');
+          const response = await axios.get('https://mern-server-khaki.vercel.app/api/product-list');
           setProducts(response.data);
         } catch (error) {
           console.error(error);

@@ -19,7 +19,7 @@ const handleSubmit = (e) => {
   formData.append('price', price)
   formData.append('file', selected)
   
-  axios.post('http://localhost:3000/create', formData)
+  axios.post('https://mern-server-khaki.vercel.app/create', formData)
   .then(response => console.log(response.data))
   .catch(err => console.log(err))
 }

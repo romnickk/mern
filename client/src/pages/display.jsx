@@ -6,7 +6,7 @@ function Display() {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
-       axios.get('http://localhost:3000/api/display')
+       axios.get('https://mern-server-khaki.vercel.app/api/display')
        .then(response => setUsers(response.data))
        .catch(error => console.log(error))
     }, []);
