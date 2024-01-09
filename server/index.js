@@ -2,7 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose');
 const cors = require('cors')
 const User = require('./model/user')
-const bcrypt = require('bcrypt')
+// const bcrypt = require('bcrypt')
 const router = require('./api/productRoutes')
 const fs = require('fs')
 const path = require('path')
@@ -21,10 +21,14 @@ app.use(cors(
 app.use(express.json())
 app.use('/api', router)
 app.use(express.static(path.join(__dirname, 'uploads')))
+app.use(express.static(path.join(__dirname, 'client/build')));
 mongoose.connect('mongodb+srv://romnick:1234@romnickdb.e14diyv.mongodb.net/myreg')
 .then(() => console.log('connected success'))
 .catch((error) => console.log(error))
 
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+  });
 
 app.post('/', async(req,res) => {
     const {name, username, password} = req.body;
@@ -35,7 +39,7 @@ app.post('/', async(req,res) => {
         if(check){
          res.json({userExists:true})
         }else{
-        const hashPassword = await bcrypt.hash(password,10)
+        // const hashPassword = await bcrypt.hash(password,10)
         const saveUser = new User({name,username,password})
         await saveUser.save();
         res.json({userExists:false})
@@ -49,15 +53,15 @@ app.post('/login', async(req,res) =>{
     const {username, password} = req.body;
 
     try {
-        const checkUsername = await User.findOne({username})
-    if(checkUsername){
-        const compare = await bcrypt(password, checkUsername.password)
-        if(compare){
-            res.json({message:"success"})
-        }else{
-            res.json({message:true})
-        }
-    }
+    //     const checkUsername = await User.findOne({username})
+    // if(checkUsername){
+    //     const compare = await bcrypt(password, checkUsername.password)
+    //     if(compare){
+    //         res.json({message:"success"})
+    //     }else{
+    //         res.json({message:true})
+    //     }
+    // }
     }catch(error){
     console.log(error)
     }
