@@ -48,53 +48,20 @@ function App() {
      <div>
      <BrowserRouter>
       <Routes>
-        <Route path='/home' element={<Home/>}></Route>
-        <Route path='/about' element={<About/>}></Route>
-        {/* <Route path='/' element={<Register/>}></Route> */}
+        <Route path='/api/home' element={<Home/>}></Route>
+        <Route path='/api/about' element={<About/>}></Route>
+        <Route path='/' element={<Register/>}></Route>
         <Route path='/display' element={<Display/>}></Route>
-        <Route path='/login' element={<Login/>}></Route>
+        <Route path='/api/login' element={<Login/>}></Route>
 
 
-        <Route path='/product-list' element={<ProductList/>}></Route>
-        <Route path='/create' element={<CreateProduct/>}></Route>
+        <Route path='/api/product-list' element={<ProductList/>}></Route>
+        <Route path='/api/create' element={<CreateProduct/>}></Route>
 
         
       </Routes>
       </BrowserRouter>
      </div>
-
-     <div className={style.container}>
-      <form onSubmit={handleSubmit}>
-      <h2 className={style.title}>Register</h2>
-
-      {message && <p className={style.message}>{message}</p>}
-
-      <div className='mb-3'>
-        <label htmlFor="name">
-        <strong>Name:</strong>
-        </label>
-        <input type="text" name="name" id="name" autoComplete='off' placeholder='enter your name' className='form-control rounded-0' onChange={(e) => setName(e.target.value)}/>
-      </div>
-
-      <div className='mb-3'>
-      <label htmlFor="username">
-      <strong>Username:</strong>
-      </label>
-      <input type="text" name="username" id="username" autoComplete='off' placeholder='enter your username' className='form-control rounded-0' onChange={(e) => serUsername(e.target.value)} />
-    </div>
-
-    <div className='mb-3'>
-    <label htmlFor="password">
-    <strong>Password:</strong>
-    </label>
-    <input type="text" name="password" id="password" autoComplete='off' placeholder='enter your password' className='form-control rounded-0' onChange={(e) => setPassword(e.target.value)}/>
-  </div>
-
-  <button type='submit' className={style.register}>Register</button>
-  <p>Already have an account? </p>
-  {/* <Link to="/login">Login</Link> */}
-  </form>
-  </div>
      <h2>Hello World</h2>
 </>   
   )

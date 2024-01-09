@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors')
 const User = require('./model/user')
 // const bcrypt = require('bcrypt')
-const router = require('./routes/productRoutes')
+const router = require('./api/productRoutes')
 const fs = require('fs')
 const path = require('path')
 const multer = require('multer')
@@ -19,7 +19,7 @@ app.use(cors(
          }
 ))
 app.use(express.json())
-app.use('/', router)
+app.use('/api', router)
 app.use(express.static(path.join(__dirname, 'uploads')))
 mongoose.connect('mongodb+srv://romnick:1234@romnickdb.e14diyv.mongodb.net/myreg')
 .then(() => console.log('connected success'))

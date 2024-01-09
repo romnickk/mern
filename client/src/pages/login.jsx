@@ -14,7 +14,7 @@ function Register() {
   const checkUser = async () =>{
     try {
       
-      const response = await axios.post('http://localhost:3000/login', {username,password})
+      const response = await axios.post('http://localhost:3000/api/login', {username,password})
        
       setMessage(response.data.message)
       
