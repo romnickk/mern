@@ -65,7 +65,7 @@ function Register() {
   </div>
 
   <button type='submit' className={style.register}>Register</button>
-  <p>Already have an account? <Link to="/login">Login</Link></p>
+  <p>Already have an account? <Link to="/api/login">Login</Link></p>
 
   </form>
   </div>
